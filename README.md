@@ -16,20 +16,27 @@
       "name": "Reasoning Ability",
       "durationMinutes": 20,
       "cutoff": 24,
+      "groups": [
+        {
+          "id": "p1",
+          "passage": "<b>Directions (Q. 1-2):</b> Eight persons A to H sit around a circular table facing the centre. B sits second to the right of C."
+        }
+      ],
       "questions": [
         {
           "id": 1,
-          "question": "Which number comes next? 2, 4, 8, 16, ?",
-          "options": ["24", "30", "32", "36"],
-          "correct": 3,
-          "explanation": "Each number is doubled: 16 x 2 = 32."
+          "groupId": "p1",
+          "question": "Who sits third to the left of B?",
+          "options": ["A", "D", "E", "F", "G"],
+          "correct": 2,
+          "explanation": "Clockwise order: B, D, C, E, G, A, F, H. D is third to the left of B.<br><b>Full solution:</b> Reasoning_Day3.pdf, pages 13-14"
         },
         {
           "id": 2,
-          "question": "If A &gt; B and B &gt; C, then which is definitely true?",
-          "options": ["C &gt; A", "A &gt; C", "A = C", "B &gt; A", "None of these"],
-          "correct": 2,
-          "explanation": "A &gt; B &gt; C, so A &gt; C."
+          "question": "Which number comes next? 2, 4, 8, 16, ?",
+          "options": ["24", "30", "32", "36"],
+          "correct": 3,
+          "explanation": "Each term doubles: 16 x 2 = 32.<br><b>Full solution:</b> Reasoning_Day3.pdf, page 15"
         }
       ]
     }
@@ -55,27 +62,20 @@
       "durationMinutes": 20,
       "cutoff": 27,
       "questions": [
-        {
-          "id": 1,
-          "question": "Choose the correct word: He is ___ honest man.",
-          "options": ["a", "an", "the", "no article"],
-          "correct": 2,
-          "explanation": "'Honest' starts with a vowel sound, so 'an' is used."
-        }
+        { "id": 1, "question": "He is ___ honest man.", "options": ["a", "an", "the", "no article"], "correct": 2,
+          "explanation": "'Honest' starts with a vowel sound, so 'an'.<br><b>Full solution:</b> English_Mock01.pdf, page 4" }
       ]
     },
     {
       "name": "Quantitative Aptitude",
       "durationMinutes": 20,
       "cutoff": 30,
+      "groups": [
+        { "id": "di1", "passage": "<b>Directions (Q. 1-2):</b> Study the bar chart and answer the questions.", "image": "quant1-di1-bar.png" }
+      ],
       "questions": [
-        {
-          "id": 1,
-          "question": "What is 15% of 200?",
-          "options": ["20", "25", "30", "35"],
-          "correct": 3,
-          "explanation": "200 x 15/100 = 30."
-        }
+        { "id": 1, "groupId": "di1", "question": "Total sales in 2022 and 2023?", "options": ["210", "230", "250", "270", "290"], "correct": 3,
+          "explanation": "120 + 130 = 250.<br><b>Full solution:</b> Quant_Mock01.pdf, pages 22-23" }
       ]
     },
     {
@@ -83,28 +83,21 @@
       "durationMinutes": 20,
       "cutoff": 33,
       "questions": [
-        {
-          "id": 1,
-          "question": "<b>Directions:</b> see the information above and answer.<br>Who sits to the left of A?",
-          "options": ["B", "C", "D", "E"],
-          "correct": 1,
-          "passage": "Four persons A, B, C and D sit in a row facing north. B sits at the extreme left. A sits second from the right.",
-          "groupId": "row1"
-        },
-        {
-          "id": 2,
-          "question": "Who sits at the extreme right?",
-          "options": ["A", "B", "C", "D"],
-          "correct": 4,
-          "passage": "Four persons A, B, C and D sit in a row facing north. B sits at the extreme left. A sits second from the right.",
-          "groupId": "row1"
-        }
+        { "id": 1, "question": "Which is the odd one out?", "options": ["Cat", "Dog", "Car", "Cow"], "correct": 3,
+          "explanation": "Car is not an animal.<br><b>Full solution:</b> Reasoning_Mock01.pdf, page 40" }
       ]
     }
   ]
 }
 ```
 ## Field reference
+
+| Field         | Notes                                                                                                                             |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `explanation` | Optional. Short solution text and, if you want, your reference line. Shown only in Analyse and Re-attempt, never during the exam. |
+| `groups`      | Optional. Directions, table or chart written once per set (`id`, `passage`, `image`). Questions only say `"groupId"`.             |
+| `image`       | The file name of an image you attach with the "Add images" button.                                                               |
+| `correct`     | 1-based option number.                                                                                                           |
 
 | Field | Required | Notes |
 | :--- | :--- | :--- |
